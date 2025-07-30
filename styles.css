@@ -59,7 +59,7 @@ body {
 /* Login Container */
 .login-container {
     position: absolute;
-    top: 80px;
+    top: 40px;
     right: 20px;
     z-index: 1005;
     display: flex;
