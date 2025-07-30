@@ -2115,4 +2115,76 @@ footer a:hover {
     }
 }
 
+/* Achievement Progress Bar */
+.achievement-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(var(--blur-medium));
+    border-bottom: 1px solid var(--border-transparent);
+    padding: 8px 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.achievement-progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.achievement-progress-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.achievement-progress-text {
+    color: var(--text-white);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.achievement-next-title {
+    color: var(--text-secondary);
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+/* Adjust main container to account for progress bar */
+.container {
+    padding-top: 60px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .achievement-progress-container {
+        padding: 6px 15px;
+        gap: 10px;
+    }
+    
+    .achievement-progress-text {
+        font-size: 11px;
+    }
+    
+    .achievement-next-title {
+        font-size: 10px;
+    }
+    
+    .container {
+        padding-top: 50px;
+    }
+} 
+
 /* Hotbar */ 

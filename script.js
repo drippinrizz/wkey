@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('keydown', handleKeyInput);
     document.addEventListener('keyup', handleKeyInput);
-
+    
     const wKey = document.getElementById('wKey');
     const totalClicksElement = document.getElementById('totalClicks');
     const userClicksElement = document.getElementById('userClicks');
@@ -358,10 +358,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const config = POWER_UPS[powerId.toUpperCase()];
                 const icon = slot.querySelector('.hotbar-icon');
                 
-                            // Set initial locked state based on unlocked status
-            const isUnlocked = config.unlocked || config.serverUnlocked;
-            icon.classList.toggle('locked', !isUnlocked);
-            slot.classList.toggle('locked', !isUnlocked);
+                // Set initial locked state based on unlocked status
+                const isUnlocked = config.unlocked || config.serverUnlocked;
+                icon.classList.toggle('locked', !isUnlocked);
+                slot.classList.toggle('locked', !isUnlocked);
             
             // Set unlock requirement text
             const requirement = slot.querySelector('.unlock-requirement');
@@ -668,8 +668,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const keycapPool = {
         active: new Set(),
         inactive: Array.from({ length: KEYCAP_POOL_SIZE }, () => {
-            const keycap = document.createElement('div');
-            keycap.className = 'falling-keycap';
+        const keycap = document.createElement('div');
+        keycap.className = 'falling-keycap';
             return keycap;
         })
     };
@@ -905,6 +905,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 saveAchievements();
             }
         });
+        
+        // Update achievement progress bar
+        updateAchievementProgress();
     }
 
     // Show achievement notification
@@ -970,6 +973,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load achievements on startup
     loadAchievements();
+    
+    // Initialize achievement progress bar
+    updateAchievementProgress();
     
     // Google OAuth URL
     const GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=163000573510-lqegaesa4lc8b7bvu6b96s003a1n2q2j.apps.googleusercontent.com&redirect_uri=https://xqx2-ksev-bf5k.n7.xano.io/api:hDSaM-SC/oauth/redirect&response_type=code&scope=openid%20email%20profile&access_type=offline&prompt=consent';
@@ -1159,10 +1165,10 @@ document.addEventListener('DOMContentLoaded', function() {
         loginContainer.classList.remove('logged-in');
         loginContainer.innerHTML = `
             <div class="login-row">
-                <button id="loginBtn" class="login-btn">
-                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" class="google-icon">
-                    Sign in with Google
-                </button>
+            <button id="loginBtn" class="login-btn">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" class="google-icon">
+                Sign in with Google
+            </button>
                 <button id="settingsBtn" class="settings-btn" title="Theme Settings">
                     <svg class="settings-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z"/>
@@ -1819,7 +1825,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function getLocalDateString(date) {
         return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
     }
-
+    
     // Function to get daily stats from Xano API
     async function getDailyStats(month, year) {
         const token = localStorage.getItem('userToken');
@@ -1828,7 +1834,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get stats from localStorage when logged out
             const savedStats = localStorage.getItem('dailyClickStats');
             if (!savedStats) {
-                return getEmptyStats(month, year);
+            return getEmptyStats(month, year);
             }
 
             const dailyStats = JSON.parse(savedStats);
@@ -1908,7 +1914,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get the local date string for this day
             const localDateKey = getLocalDateString(date);
-
+            
             stats.push({
                 date: dateStr,
                 clicks: 0,
@@ -1948,7 +1954,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get the local date string for this day
             const localDateKey = getLocalDateString(date);
-
+            
             stats.push({
                 date: dateStr,
                 clicks: parsedStats[i] || 0,
@@ -1965,21 +1971,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const dateKey = getLocalDateString(today); // Use local date
         
         // Always update localStorage for logged out users
-        const savedStats = localStorage.getItem('dailyClickStats');
-        let dailyStats = savedStats ? JSON.parse(savedStats) : {};
-        
-        // Increment today's count
+            const savedStats = localStorage.getItem('dailyClickStats');
+            let dailyStats = savedStats ? JSON.parse(savedStats) : {};
+            
+            // Increment today's count
         if (!dailyStats[dateKey]) {
             dailyStats[dateKey] = 0;
         }
         dailyStats[dateKey] += 1;
-        
-        // Save back to localStorage
-        localStorage.setItem('dailyClickStats', JSON.stringify(dailyStats));
+            
+            // Save back to localStorage
+            localStorage.setItem('dailyClickStats', JSON.stringify(dailyStats));
 
-        // Update user click display
-        userTotal = Object.values(dailyStats).reduce((sum, clicks) => sum + clicks, 0);
-        userClicksElement.textContent = userTotal.toLocaleString();
+            // Update user click display
+            userTotal = Object.values(dailyStats).reduce((sum, clicks) => sum + clicks, 0);
+            userClicksElement.textContent = userTotal.toLocaleString();
 
         // Check achievements after updating stats
         checkAchievements();
@@ -2014,7 +2020,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navigator.sendBeacon(API_ENDPOINT, JSON.stringify({
                     clicks: clickCount
                 }));
-            } catch (error) {
+        } catch (error) {
                 console.error('Error sending final clicks:', error);
             }
         }
@@ -2321,7 +2327,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     
                     return await response.json();
-                } catch (error) {
+        } catch (error) {
                     lastError = error;
                     console.warn(`API request failed (attempt ${i + 1}/${retries}):`, error);
                     
@@ -2365,7 +2371,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         },
                         body: JSON.stringify({ batch })
                     });
-                } catch (error) {
+            } catch (error) {
                     console.error('Batch request failed:', error);
                 }
             }, 100)); // Batch requests every 100ms
@@ -2382,11 +2388,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         value: JSON.parse(value),
                         expires: null
                     });
-                } catch (error) {
+            } catch (error) {
                     console.warn(`Failed to parse localStorage value for ${key}:`, error);
-                }
             }
-        });
+        }
+    });
     }
 
     // Update daily stats with caching
@@ -2419,4 +2425,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize cache
     initializeCache();
+
+    // Function to update achievement progress bar
+    function updateAchievementProgress() {
+        const savedStats = localStorage.getItem('dailyClickStats');
+        if (!savedStats) return;
+        
+        const dailyStats = JSON.parse(savedStats);
+        const totalPersonalClicks = Object.values(dailyStats).reduce((sum, clicks) => sum + clicks, 0);
+        
+        // Find the next achievement
+        const nextAchievement = achievements.find(achievement => !achievement.unlocked);
+        if (!nextAchievement) {
+            // All achievements unlocked
+            document.querySelector('.achievement-progress-fill').style.width = '100%';
+            document.querySelector('.achievement-current').textContent = totalPersonalClicks.toLocaleString();
+            document.querySelector('.achievement-next').textContent = '∞';
+            document.querySelector('.achievement-next-title').textContent = 'All Achievements Unlocked!';
+            return;
+        }
+        
+        // Calculate progress
+        const progress = Math.min(totalPersonalClicks / nextAchievement.requirement, 1);
+        const progressPercentage = progress * 100;
+        
+        // Update progress bar
+        document.querySelector('.achievement-progress-fill').style.width = `${progressPercentage}%`;
+        document.querySelector('.achievement-current').textContent = totalPersonalClicks.toLocaleString();
+        document.querySelector('.achievement-next').textContent = nextAchievement.requirement.toLocaleString();
+        document.querySelector('.achievement-next-title').textContent = `Next: ${nextAchievement.title}`;
+        
+        // Add glow effect when close to achievement
+        const progressFill = document.querySelector('.achievement-progress-fill');
+        if (progress > 0.9) {
+            progressFill.style.boxShadow = '0 0 10px var(--primary-end)';
+        } else {
+            progressFill.style.boxShadow = 'none';
+        }
+    }
+
+    // Function to sync achievements from server data
+    function syncAchievementsFromServer(serverAchievements) {
+        if (!serverAchievements || !Array.isArray(serverAchievements)) return;
+        
+        // Create a set of server achievement IDs for quick lookup
+        const serverAchievementIds = new Set(serverAchievements.map(achievement => achievement.achievements_id));
+        
+        // Track which achievements were newly unlocked from server sync
+        const newlyUnlockedFromServer = [];
+        
+        // Mark achievements as unlocked if they exist on server
+        achievements.forEach(achievement => {
+            const wasUnlocked = achievement.unlocked;
+            if (serverAchievementIds.has(achievement.id)) {
+                achievement.unlocked = true;
+                // Track if this was newly unlocked from server
+                if (!wasUnlocked) {
+                    newlyUnlockedFromServer.push(achievement);
+                }
+            }
+        });
+        
+        // Save to localStorage to persist the sync
+        saveAchievements();
+        
+        // Show notifications for achievements newly unlocked from server sync
+        newlyUnlockedFromServer.forEach(achievement => {
+            showAchievementNotification(achievement);
+        });
+        
+        console.log('Synced achievements from server:', serverAchievementIds);
+        if (newlyUnlockedFromServer.length > 0) {
+            console.log('Newly unlocked from server:', newlyUnlockedFromServer.map(a => a.title));
+        }
+    }
 }); 

@@ -75,48 +75,60 @@
         </div>
     </div>
     
-    <div class="counter-container">
-        <div class="counter-display">
-            <div class="counter-label">TOTAL W CLICKS</div>
-            <div class="counter-value" id="totalClicks">0</div>
-            <div class="counter-subtitle">GLOBAL</div>
-            <div class="counter-value" id="userClicks" style="font-size: 14px; opacity: 0.7;">0</div>
-            <div class="counter-subtitle" style="font-size: 10px; margin-top: -5px;">YOUR CLICKS</div>
+    <div class="achievement-progress-container">
+        <div class="achievement-progress-bar">
+            <div class="achievement-progress-fill"></div>
         </div>
-    </div>
-    
-    <div class="progress-container">
-        <div class="progress-info">
-            <div class="progress-stats">
-                <span class="progress-current" id="progressCurrent">0</span>
-                <span class="progress-separator">/</span>
-                <span class="progress-goal" id="progressGoal">10,000</span>
-            </div>
-            <div class="progress-percentage" id="progressPercentage">0%</div>
+        <div class="achievement-progress-text">
+            <span class="achievement-current">0</span> / <span class="achievement-next">250</span> clicks
         </div>
-        <div class="progress-bar"></div>
-    </div>
-    
-    <div class="key-container">
-        <div class="w-key" id="wKey">
-            <span>W</span>
-        </div>
+        <div class="achievement-next-title">Next: First Click</div>
     </div>
 
-    <div class="hotbar">
-        <div class="hotbar-slot" data-power="auto_w">
-            <div class="hotbar-icon locked">⚡</div>
-            <div class="hotbar-label">Auto Click</div>
-            <div class="hotbar-key">1</div>
-            <div class="cooldown-overlay"></div>
-            <div class="unlock-requirement">2,000</div>
+    <div class="container">
+        <div class="counter-container">
+            <div class="counter-display">
+                <div class="counter-label">TOTAL W CLICKS</div>
+                <div class="counter-value" id="totalClicks">0</div>
+                <div class="counter-subtitle">GLOBAL</div>
+                <div class="counter-value" id="userClicks" style="font-size: 14px; opacity: 0.7;">0</div>
+                <div class="counter-subtitle" style="font-size: 10px; margin-top: -5px;">YOUR CLICKS</div>
+            </div>
         </div>
-        <div class="hotbar-slot" data-power="double_w">
-            <div class="hotbar-icon locked">✨</div>
-            <div class="hotbar-label">Double Click</div>
-            <div class="hotbar-key">2</div>
-            <div class="cooldown-overlay"></div>
-            <div class="unlock-requirement">10,000</div>
+        
+        <div class="progress-container">
+            <div class="progress-info">
+                <div class="progress-stats">
+                    <span class="progress-current" id="progressCurrent">0</span>
+                    <span class="progress-separator">/</span>
+                    <span class="progress-goal" id="progressGoal">10,000</span>
+                </div>
+                <div class="progress-percentage" id="progressPercentage">0%</div>
+            </div>
+            <div class="progress-bar"></div>
+        </div>
+        
+        <div class="key-container">
+            <div class="w-key" id="wKey">
+                <span>W</span>
+            </div>
+        </div>
+
+        <div class="hotbar">
+            <div class="hotbar-slot" data-power="auto_w">
+                <div class="hotbar-icon locked">⚡</div>
+                <div class="hotbar-label">Auto Click</div>
+                <div class="hotbar-key">1</div>
+                <div class="cooldown-overlay"></div>
+                <div class="unlock-requirement">2,000</div>
+            </div>
+            <div class="hotbar-slot" data-power="double_w">
+                <div class="hotbar-icon locked">✨</div>
+                <div class="hotbar-label">Double Click</div>
+                <div class="hotbar-key">2</div>
+                <div class="cooldown-overlay"></div>
+                <div class="unlock-requirement">10,000</div>
+            </div>
         </div>
     </div>
 
