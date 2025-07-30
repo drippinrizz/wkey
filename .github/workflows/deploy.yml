@@ -13,8 +13,8 @@ jobs:
     - name: Deploy to Namecheap FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: wkeyclub.com
-        username: ${{ secrets.FTP_USERNAME }}
+        server: ftp.wkeyclub.com
+        username: wkeykrdt
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: public_html/
         local-dir: ./
