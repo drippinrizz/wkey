@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Deploy to SFTP
+    - name: Deploy to Namecheap FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: wkeyclub.com
@@ -18,7 +18,8 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: public_html/
         local-dir: ./
-        protocol: sftp
+        protocol: ftp
+        port: 21
         exclude: |
           **/.git*
           **/.git*/**
