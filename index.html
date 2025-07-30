@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W Key Club</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wkeyclub.com/">
+    <meta property="og:title" content="W Key Club">
+    <meta property="og:description" content="Welcome to the W key club. Press W as many times as possible. Collect Ws.">
+    <meta property="og:image" content="https://wkeyclub.com/w.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="W Key Club">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://wkeyclub.com/">
+    <meta property="twitter:title" content="W Key Club">
+    <meta property="twitter:description" content="Welcome to the W key club. Press W as many times as possible. Collect Ws.">
+    <meta property="twitter:image" content="https://wkeyclub.com/w.png">
+    <meta property="twitter:site" content="@wkeyclub">
+    <meta property="twitter:creator" content="@wkeyclub">
+    
+    <!-- Discord -->
+    <meta property="discord:invite" content="https://discord.gg/wkeyclub">
+    <meta name="theme-color" content="#667eea">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2d1b4e">
+    
+    <!-- LinkedIn -->
+    <meta property="linkedin:owner" content="wkeyclub">
+    
+    <!-- WhatsApp -->
+    <meta property="og:image:alt" content="W Key Club - Click the W key as many times as possible">
+    
+    <!-- Additional SEO -->
+    <meta name="description" content="Welcome to the W key club. Press W as many times as possible. Collect Ws.">
+    <meta name="keywords" content="w key, clicking game, keyboard, typing, w key club, gaming">
+    <meta name="author" content="W Key Club">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Mobile/App specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="W Key Club">
+    <meta name="application-name" content="W Key Club">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="stylesheet" href="styles.css?v=6.6">
+    <script src="https://cdn.jsdelivr.net/npm/@xano/js-sdk@latest/dist/xano.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Check if confetti loaded
+        window.addEventListener('load', function() {
+            if (typeof confetti !== 'function') {
+                console.error('Confetti library failed to load!');
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <div class="login-container">
+        <button id="loginBtn" class="login-btn">
+            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" class="google-icon">
+            Sign in with Google
+        </button>
+        <div class="mobile-privacy-link">
+            <a href="https://wkeyclub.com/pp.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 10px;">Privacy Policy</a>
+        </div>
+    </div>
+    
+    <div class="counter-container">
+        <div class="counter-display">
+            <div class="counter-label">TOTAL W CLICKS</div>
+            <div class="counter-value" id="totalClicks">0</div>
+            <div class="counter-subtitle">GLOBAL</div>
+            <div class="counter-value" id="userClicks" style="font-size: 14px; opacity: 0.7;">0</div>
+            <div class="counter-subtitle" style="font-size: 10px; margin-top: -5px;">YOUR CLICKS</div>
+        </div>
+    </div>
+    
+    <div class="progress-container">
+        <div class="progress-info">
+            <div class="progress-stats">
+                <span class="progress-current" id="progressCurrent">0</span>
+                <span class="progress-separator">/</span>
+                <span class="progress-goal" id="progressGoal">10,000</span>
+            </div>
+            <div class="progress-percentage" id="progressPercentage">0%</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+    
+    <div class="key-container">
+        <div class="w-key" id="wKey">
+            <span>W</span>
+        </div>
+    </div>
+
+    <div class="hotbar">
+        <div class="hotbar-slot" data-power="auto_w">
+            <div class="hotbar-icon locked">⚡</div>
+            <div class="hotbar-label">Auto Click</div>
+            <div class="hotbar-key">1</div>
+            <div class="cooldown-overlay"></div>
+            <div class="unlock-requirement">2,000</div>
+        </div>
+        <div class="hotbar-slot" data-power="double_w">
+            <div class="hotbar-icon locked">✨</div>
+            <div class="hotbar-label">Double Click</div>
+            <div class="hotbar-key">2</div>
+            <div class="cooldown-overlay"></div>
+            <div class="unlock-requirement">10,000</div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; padding: 20px;">
+        <a href="https://wkeyclub.com/pp.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 12px;">Privacy Policy</a>
+    </footer>
+
+    <script src="script.js?v=7.2" type="module"></script>
+</body>
+</html> 
