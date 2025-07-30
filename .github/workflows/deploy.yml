@@ -10,14 +10,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Deploy to FTP
+    - name: Deploy to SFTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.wkeyclub.com
+        server: wkeyclub.com
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: public_html/
         local-dir: ./
+        protocol: sftp
         exclude: |
           **/.git*
           **/.git*/**
