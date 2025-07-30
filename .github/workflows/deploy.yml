@@ -16,10 +16,11 @@ jobs:
         server: wkeyclub.com
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/wkeykrdt/public_html/
+        server-dir: public_html/
         local-dir: ./
         protocol: ftp
         port: 21
+        dangerous-clean-slate: true
         exclude: |
           **/.git*
           **/.git*/**
