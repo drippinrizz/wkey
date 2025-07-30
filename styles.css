@@ -1018,19 +1018,6 @@ footer a:hover {
     width: 100%;
 }
 
-/* Hotbar */
-.hotbar {
-    display: flex;
-    gap: 12px;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-}
-
 .w-key {
     width: clamp(12rem, 30vw, 20rem);
     height: clamp(12rem, 30vw, 20rem);
@@ -1400,10 +1387,6 @@ footer a:hover {
 
 /* Hotbar */
 .hotbar {
-    position: fixed;
-    bottom: 60px; /* Natural spacing from bottom */
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     gap: 12px;
     padding: 12px;
@@ -1413,7 +1396,6 @@ footer a:hover {
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hotbar-slot {
