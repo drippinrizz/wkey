@@ -59,12 +59,11 @@ body {
 /* Login Container */
 .login-container {
     position: absolute;
-    top: 20px;
+    top: 80px;
     right: 20px;
     z-index: 1005;
     display: flex;
     flex-direction: column;
-
 }
 
 .login-row {
