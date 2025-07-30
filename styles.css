@@ -1020,10 +1020,14 @@ footer a:hover {
 
 /* Hotbar */
 .hotbar {
-    position: fixed;
-    bottom: max(60px, env(safe-area-inset-bottom) + 40px);
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 1000;
 }
 
