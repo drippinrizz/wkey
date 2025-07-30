@@ -1582,7 +1582,7 @@ footer a:hover {
 @media (max-width: 768px) {
     .hotbar {
         position: fixed;
-        bottom: 240px;
+        bottom: 280px;
         left: 50%;
         transform: translateX(-50%);
         padding: 8px;
@@ -1647,7 +1647,7 @@ footer a:hover {
 /* Mobile Adjustments for W Key */
 @media (max-width: 768px) {
     .key-container {
-        margin-bottom: 140px;
+        margin-bottom: 160px;
         padding: 20px;
         position: relative;
         z-index: 999;
