@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let clickCount = 0;
     let localTotal = 0;
     let userTotal = 0;
-    const API_ENDPOINT = 'https://api.wkeyclub.com/api:GsaUCCCR/w_key_clicks';
-    const GET_ENDPOINT = 'https://api.wkeyclub.com/api:GsaUCCCR/get-w-keys';
+    const API_ENDPOINT = 'https://xqx2-ksev-bf5k.n7.xano.io/api:GsaUCCCR/w_key_clicks';
+    const GET_ENDPOINT = 'https://xqx2-ksev-bf5k.n7.xano.io/api:GsaUCCCR/get-w-keys';
     
     // Initialize user click count from localStorage
     const savedStats = localStorage.getItem('dailyClickStats');
@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const token = localStorage.getItem('userToken');
         if (token) {
             try {
-                const response = await fetch('https://api.wkeyclub.com/api:GsaUCCCR/stats', {
+                const response = await fetch('https://xqx2-ksev-bf5k.n7.xano.io/api:GsaUCCCR/stats', {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -978,7 +978,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAchievementProgress();
     
     // Google OAuth URL
-    const GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=163000573510-lqegaesa4lc8b7bvu6b96s003a1n2q2j.apps.googleusercontent.com&redirect_uri=https://api.wkeyclub.com/api:hDSaM-SC/oauth/redirect&response_type=code&scope=openid%20email%20profile&access_type=offline&prompt=consent';
+    const GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=163000573510-lqegaesa4lc8b7bvu6b96s003a1n2q2j.apps.googleusercontent.com&redirect_uri=https://xqx2-ksev-bf5k.n7.xano.io/api:hDSaM-SC/oauth/redirect&response_type=code&scope=openid%20email%20profile&access_type=offline&prompt=consent';
     
     // Check if user is returning from OAuth
     function checkForAuthCode() {
@@ -1009,7 +1009,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Get user data from /me endpoint
-            fetch('https://api.wkeyclub.com/api:Jx5KeafZ/auth/me', {
+            fetch('https://xqx2-ksev-bf5k.n7.xano.io/api:Jx5KeafZ/auth/me', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${authToken}`,
@@ -1225,7 +1225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (token) {
             // Get user ID from /auth/me endpoint
             try {
-                const response = await fetch('https://api.wkeyclub.com/api:Jx5KeafZ/auth/me', {
+                const response = await fetch('https://xqx2-ksev-bf5k.n7.xano.io/api:Jx5KeafZ/auth/me', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -1287,7 +1287,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize Xano realtime client
     const xanoClient = new XanoClient({
-        instanceBaseUrl: "https://api.wkeyclub.com/",
+        instanceBaseUrl: "https://xqx2-ksev-bf5k.n7.xano.io/",
         realtimeConnectionHash: "Go8biM-J5kTJRLUTAthVlHSYirk",
     });
     
@@ -1866,7 +1866,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         try {
-            const response = await fetch('https://api.wkeyclub.com/api:GsaUCCCR/stats', {
+            const response = await fetch('https://xqx2-ksev-bf5k.n7.xano.io/api:GsaUCCCR/stats', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -2417,7 +2417,7 @@ document.addEventListener('DOMContentLoaded', function() {
             await ApiManager.addToBatch('stats', {
                 date: today,
                 clicks: clicks
-            }, 'https://api.wkeyclub.com/api:GsaUCCCR/stats');
+            }, 'https://xqx2-ksev-bf5k.n7.xano.io/api:GsaUCCCR/stats');
         }
         
         return dailyStats;
