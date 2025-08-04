@@ -1257,6 +1257,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (userData.clickcount !== undefined) {
                         userTotal = userData.clickcount;
                         userClicksElement.textContent = userTotal.toLocaleString();
+                        updateAchievementProgress(); // Update achievement progress after login
                     }
                     
                     replaceLoginWithLogout();
@@ -1986,6 +1987,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update user click display
             userTotal = Object.values(dailyStats).reduce((sum, clicks) => sum + clicks, 0);
             userClicksElement.textContent = userTotal.toLocaleString();
+            updateAchievementProgress(); // Update achievement progress after logout
 
         // Check achievements after updating stats
         checkAchievements();
@@ -2428,11 +2430,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to update achievement progress bar
     function updateAchievementProgress() {
-        const savedStats = localStorage.getItem('dailyClickStats');
-        if (!savedStats) return;
-        
-        const dailyStats = JSON.parse(savedStats);
-        const totalPersonalClicks = Object.values(dailyStats).reduce((sum, clicks) => sum + clicks, 0);
+        // Use the current userTotal which is already properly synced with login state
+        const totalPersonalClicks = userTotal;
         
         // Find the next achievement
         const nextAchievement = achievements.find(achievement => !achievement.unlocked);
